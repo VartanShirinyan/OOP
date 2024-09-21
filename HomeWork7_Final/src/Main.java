@@ -1,9 +1,8 @@
 
-import java.io.IOException;
-import java.util.Scanner;
-
 import calculator.BasicComplexCalculator;
 import calculator.ComplexNumber;
+import java.io.IOException;
+import java.util.Scanner;
 import logger.Logger;
 
 public class Main {
@@ -31,7 +30,7 @@ public class Main {
         while (true) {
             System.out.print("Введите комплексное число (в формате 'a + bi' или 'a-bi'): ");
             String input = scanner.nextLine().trim();
-            String regex = "([-+]?[\\d]*\\.?[\\d]+)\\s*([-+])?\\s*(\\d*\\.?\\d+)i"; // Регулярное выражение
+            String regex = "([-+]?[\\d]*\\.?[\\d]+)\\s*([-+])?\\s*(\\d*\\.?\\d+)i";
             java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(regex);
             java.util.regex.Matcher matcher = pattern.matcher(input);
 
@@ -43,7 +42,7 @@ public class Main {
                 }
                 return new ComplexNumber(real, imaginary);
             } else {
-                System.out.println("Неверный формат. Пожалуйста, попробуйте снова.");
+                System.out.println("Неверный формат, попробуйте снова.");
             }
         }
     }
